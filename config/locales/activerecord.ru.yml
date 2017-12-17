@@ -3,9 +3,11 @@ ru:
     models:
       post: 'Статья'
     attributes:
-      title: 'Название'
-      summary: 'Краткая статья'
-      body: 'Содержание'
+      post:
+        title: 'Название'
+        summary: 'Краткая статья'
+        body: 'Содержание'
+        all_tags: 'Теги'
     errors:
       messages:
         blank: 'не может быть пустым'
