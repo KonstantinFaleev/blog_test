@@ -59,3 +59,6 @@ source 'http://rails-assets.org' do
 end
 gem 'jquery-rails'
 
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
