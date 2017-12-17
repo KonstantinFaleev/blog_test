@@ -9,9 +9,22 @@
   </head>
 
   <body>
+  <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="<%= posts_path %>">Статьи</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Контакты</a>
+        </li>
+      </ul>
+    <%= link_to 'Новая статья', new_post_path, class: 'btn btn-outline-primary pull-xs-right' %>
+  </nav>
+  </div>
 
-  <%= link_to 'Все статьи', posts_path %>
-  <%= link_to 'Новая статья', new_post_path %>
+  <div class="container main">
     <%= yield %>
+  </div>
   </body>
 </html>
