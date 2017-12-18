@@ -3,10 +3,14 @@
     <h1><%= @post.title %></h1>
     <small>
       <time><%= @post.created_at.to_date.strftime("%d %B, %Y")%></time>
+      <% if user_signed_in? %>
       |
       <%= link_to 'Изменить', edit_post_path(@post)%>
       |
       <%= link_to 'Удалить', post_path(@post),method: :delete, data: { confirm: 'Вы уверены?' } %>
+      <% end %>
+      |
+      комментариев: <%= @post.comments.count %>
     </small>
   </section>
   <section class="post-body">
@@ -14,8 +18,9 @@
     <%= @post.body %>
   </section>
 </article>
-<h2><%= @post.comments.count %> Комментарии</h2>
+<h2>КOMMEНТАРИИ: <%= @post.comments.count %></h2>
 <%= render @post.comments %>
 <h3>Комментарий: </h3>
 <%=  render 'comments/form'%>
+
 
