@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :comments, dependent: :destroy
   validates :title, :summary, :body, presence: true
 
   def all_tags

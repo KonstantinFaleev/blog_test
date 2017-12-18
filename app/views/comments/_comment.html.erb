@@ -1,0 +1,13 @@
+<article class="post">
+  <section class="post-head">
+    <h1><%= comment.name %></h1>
+    <small>
+      <time><%= comment.created_at.to_date.strftime("%d %B, %Y")%></time>
+      |
+      <%= link_to 'Удалить', [comment.post, comment],method: :delete, data: { confirm: 'Вы уверены?' } %>
+    </small>
+  </section>
+  <section class="post-body">
+    <%= comment.body %>
+  </section>
+</article>

@@ -14,5 +14,8 @@
     <%= @post.body %>
   </section>
 </article>
-
+<h2><%= @post.comments.count %> Комментарии</h2>
+<%= render @post.comments %>
+<h3>Комментарий: </h3>
+<%=  render 'comments/form'%>
 
