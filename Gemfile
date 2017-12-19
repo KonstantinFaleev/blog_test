@@ -59,9 +59,11 @@ source 'http://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 gem 'jquery-rails'
-
+gem 'javascript'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'will_paginate', '~> 3.1.0'
 gem 'devise'
+gem 'acts_as_votable'
+gem "font-awesome-rails"
 

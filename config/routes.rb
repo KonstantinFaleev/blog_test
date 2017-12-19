@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :posts do
     resources :comments
+    member do
+      put 'like' => 'posts#vote'
+    end
   end
   resources :tags, only: [:show]
 end

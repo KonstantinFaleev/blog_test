@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: [ :show, :edit, :update, :destroy]
+  before_action :set_post, only: [ :show, :edit, :update, :destroy, :vote]
+  respond_to :js, :json, :html
 
   def index
     @posts = Post.paginate(page: params[:page], per_page: 20)
@@ -39,6 +40,13 @@ class PostsController < ApplicationController
     redirect_to posts_path, success: 'Статья успешно удалена'
   end
 
+  def vote
+    if !current_user.liked? @post
+      @post.liked_by current_user
+    elsif current_user.liked? @post
+      @post.unliked_by current_user
+    end
+  end
 
   private
 
