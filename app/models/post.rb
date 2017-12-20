@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :taggings
   has_many :tags, through: :taggings
   has_many :comments, dependent: :destroy
+  belongs_to :category
   acts_as_votable
   validates :title, :summary, :body, presence: true
 

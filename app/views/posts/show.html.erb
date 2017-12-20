@@ -1,3 +1,4 @@
+<%= render 'shared/breadcrumb', category: @post.category %>
 <article class="post">
   <section class="post-head">
     <h1><%= @post.title %></h1>
@@ -7,9 +8,14 @@
         </div>
     <% end %>
     <span class="likes-count"><%= @post.get_upvotes.size %></span>
+      |
     <small>
       <time><%= @post.created_at.to_date.strftime("%d %B, %Y")%></time>
       <% if user_signed_in? %>
+          <% if @post.category.present? %>
+              |
+              <%= link_to @post.category.name, @post.category %>
+          <% end %>
       |
       <%= link_to 'Изменить', edit_post_path(@post)%>
       |

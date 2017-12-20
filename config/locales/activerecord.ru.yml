@@ -7,7 +7,10 @@ ru:
         title: 'Название'
         summary: 'Краткая статья'
         body: 'Содержание'
+      category:
+        name: 'Название'
         all_tags: 'Теги'
+        parent_id: 'Категория родитель'
     errors:
       messages:
         blank: 'не может быть пустым'
